@@ -1,13 +1,5 @@
 [
     {
-        "id": "d918a03feb7c460b",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "6fb066b12b6b7f81",
         "type": "tab",
         "label": "B01-B14 Inverters",
@@ -18,7 +10,15 @@
     {
         "id": "456d66e8cb220ab1",
         "type": "tab",
-        "label": "NR-PPC",
+        "label": "HPPC-SOLAR",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d918a03feb7c460b",
+        "type": "tab",
+        "label": "HPPC-WIND",
         "disabled": false,
         "info": "",
         "env": []
@@ -2575,7 +2575,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.04\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.061\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2775,7 +2775,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1515\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2975,7 +2975,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1515\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3175,7 +3175,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.06\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.091\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3375,7 +3375,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.04\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.118\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3575,7 +3575,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.294\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4575,7 +4575,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.06\n\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.091\n\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4895,7 +4895,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1515\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5225,7 +5225,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.04\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.061\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5545,7 +5545,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.06\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.091\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5865,7 +5865,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.294\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6267,7 +6267,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1\n\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.294\n\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6406,7 +6406,7 @@
         "type": "function",
         "z": "6fb066b12b6b7f81",
         "name": "data process",
-        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1\n\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
+        "func": "let array = []\nfor (var i = 0; i < msg.payload.length; i++)\n{\n\n    var old_name = msg.payload[i].b +'.' + msg.payload[i].d +'.' + msg.payload[i].old_limit\n    var old_value = global.get(old_name)\n\n    var new_tag = msg.payload[i].f\n    var new_value = global.get(new_tag) * 0.1515\n\n\n    var obj  = {old_tag:old_name,\n                old_value:old_value,\n                new_tag:new_tag,\n                new_value:new_value,\n                register:msg.payload[i].write_reg_id,\n                qnty:msg.payload[i].addr_qty,\n                fc:msg.payload[i].fun_code,\n                unit_id:msg.payload[i].unit_id,\n                reg_type:msg.payload[i].write_reg_type,\n                b:msg.payload[i].b,\n                d:msg.payload[i].d\n                }\n    array.push(obj)\n\n}\nmsg.payload = array\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6484,7 +6484,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n1,B01.SACU01.PAC+B01.SACU02.PAC+B01.SACU03.PAC+B02.SACU01.PAC+B02.SACU02.PAC+B02.SACU03.PAC+B03.SACU01.PAC+B03.SACU02.PAC+B03.SACU03.PAC+B04.SACU01.PAC+B04.SACU02.PAC+B05.SACU01.PAC+B05.SACU02.PAC,SUM,B01,B01_VR_INV,VR_INV,VR_INV,INV,PAC,PAC,Server9084,9084,1,iplon_test,0,,MW,1",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n1,B01.SACU01.PAC+B01.SACU02.PAC+B01.SACU03.PAC+B02.SACU01.PAC+B02.SACU02.PAC+B02.SACU03.PAC+B03.SACU01.PAC+B03.SACU02.PAC+B03.SACU03.PAC,SUM,B01,B01_VR_INV,VR_INV,VR_INV,INV,PAC,PAC,Server9084,9084,1,iplon_test,0,,MW,1",
         "output": "str",
         "x": 360,
         "y": 360,
@@ -6504,7 +6504,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n2,B01.SACU01.QAC+B01.SACU02.QAC+B01.SACU03.QAC+B02.SACU01.QAC+B02.SACU02.QAC+B02.SACU03.QAC+B03.SACU01.QAC+B03.SACU02.QAC+B03.SACU03.QAC+B04.SACU01.QAC+B04.SACU02.QAC+B05.SACU01.QAC+B05.SACU02.QAC,SUM,B01,B01_VR_INV,VR_INV,VR_INV,INV,QAC,QAC,Server9084,9084,1,iplon_test,0,,MVAr,1",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n2,B01.SACU01.QAC+B01.SACU02.QAC+B01.SACU03.QAC+B02.SACU01.QAC+B02.SACU02.QAC+B02.SACU03.QAC+B03.SACU01.QAC+B03.SACU02.QAC+B03.SACU03.QAC,SUM,B01,B01_VR_INV,VR_INV,VR_INV,INV,QAC,QAC,Server9084,9084,1,iplon_test,0,,MVAr,1",
         "output": "str",
         "x": 360,
         "y": 400,
@@ -6523,7 +6523,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n3,B01.SACU01.PF+B01.SACU02.PF+B01.SACU03.PF+B02.SACU01.PF+B02.SACU02.PF+B02.SACU03.PF+B03.SACU01.PF+B03.SACU02.PF+B03.SACU03.PF+B04.SACU01.PF+B04.SACU02.PF+B05.SACU01.PF+B05.SACU02.PF,AVG,B01,B01_VR_INV,VR_INV,VR_INV,INV,PF,PF,Server9084,9084,1,iplon_test,0,,MW,1",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n3,B01.SACU01.PF+B01.SACU02.PF+B01.SACU03.PF+B02.SACU01.PF+B02.SACU02.PF+B02.SACU03.PF+B03.SACU01.PF+B03.SACU02.PF+B03.SACU03.PF,AVG,B01,B01_VR_INV,VR_INV,VR_INV,INV,PF,PF,Server9084,9084,1,iplon_test,0,,MW,1",
         "output": "str",
         "x": 360,
         "y": 440,
@@ -6542,7 +6542,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n4,B01.SACU01.OLD_PAC_LIMIT+B01.SACU02.OLD_PAC_LIMIT+B01.SACU03.OLD_PAC_LIMIT+B02.SACU01.OLD_PAC_LIMIT+B02.SACU02.OLD_PAC_LIMIT+B02.SACU03.OLD_PAC_LIMIT+B03.SACU01.OLD_PAC_LIMIT+B03.SACU02.OLD_PAC_LIMIT+B03.SACU03.OLD_PAC_LIMIT+B04.SACU01.OLD_PAC_LIMIT+B04.SACU02.OLD_PAC_LIMIT+B05.SACU01.OLD_PAC_LIMIT+B05.SACU02.OLD_PAC_LIMIT,SUM,B01,B01_VR_INV,VR_INV,VR_INV,INV,OLD_PAC_LIMIT,OLD_PAC_LIMIT,Server9084,9084,1,iplon_test,0,,MW,1",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n4,B01.SACU01.OLD_PAC_LIMIT+B01.SACU02.OLD_PAC_LIMIT+B01.SACU03.OLD_PAC_LIMIT+B02.SACU01.OLD_PAC_LIMIT+B02.SACU02.OLD_PAC_LIMIT+B02.SACU03.OLD_PAC_LIMIT+B03.SACU01.OLD_PAC_LIMIT+B03.SACU02.OLD_PAC_LIMIT+B03.SACU03.OLD_PAC_LIMIT,SUM,B01,B01_VR_INV,VR_INV,VR_INV,INV,OLD_PAC_LIMIT,OLD_PAC_LIMIT,Server9084,9084,1,iplon_test,0,,MW,1",
         "output": "str",
         "x": 380,
         "y": 480,
@@ -6561,7 +6561,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n5,B01.SACU01.OLD_QAC_LIMIT+B01.SACU02.OLD_QAC_LIMIT+B01.SACU03.OLD_QAC_LIMIT+B02.SACU01.OLD_QAC_LIMIT+B02.SACU02.OLD_QAC_LIMIT+B02.SACU03.OLD_QAC_LIMIT+B03.SACU01.OLD_QAC_LIMIT+B03.SACU02.OLD_QAC_LIMIT+B03.SACU03.OLD_QAC_LIMIT+B04.SACU01.OLD_QAC_LIMIT+B04.SACU02.OLD_QAC_LIMIT+B05.SACU01.OLD_QAC_LIMIT+B05.SACU02.OLD_QAC_LIMIT,AVG,B01,B01_VR_INV,VR_INV,VR_INV,INV,OLD_QAC_LIMIT,OLD_QAC_LIMIT,Server9084,9084,1,iplon_test,0,,MW,1",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n5,B01.SACU01.OLD_QAC_LIMIT+B01.SACU02.OLD_QAC_LIMIT+B01.SACU03.OLD_QAC_LIMIT+B02.SACU01.OLD_QAC_LIMIT+B02.SACU02.OLD_QAC_LIMIT+B02.SACU03.OLD_QAC_LIMIT+B03.SACU01.OLD_QAC_LIMIT+B03.SACU02.OLD_QAC_LIMIT+B03.SACU03.OLD_QAC_LIMIT,AVG,B01,B01_VR_INV,VR_INV,VR_INV,INV,OLD_QAC_LIMIT,OLD_QAC_LIMIT,Server9084,9084,1,iplon_test,0,,MW,1",
         "output": "str",
         "x": 380,
         "y": 520,
@@ -6580,7 +6580,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n6,B01.SACU01.OLD_PF_LIMIT+B01.SACU02.OLD_PF_LIMIT+B01.SACU03.OLD_PF_LIMIT+B02.SACU01.OLD_PF_LIMIT+B02.SACU02.OLD_PF_LIMIT+B02.SACU03.OLD_PF_LIMIT+B03.SACU01.OLD_PF_LIMIT+B03.SACU02.OLD_PF_LIMIT+B03.SACU03.OLD_PF_LIMIT+B04.SACU01.OLD_PF_LIMIT+B04.SACU02.OLD_PF_LIMIT+B05.SACU01.OLD_PF_LIMIT+B05.SACU02.OLD_PF_LIMIT,AVG,B01,B01_VR_INV,VR_INV,VR_INV,INV,OLD_PF_LIMIT,OLD_PF_LIMIT,Server9084,9084,1,iplon_test,0,,MW,1",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n6,B01.SACU01.OLD_PF_LIMIT+B01.SACU02.OLD_PF_LIMIT+B01.SACU03.OLD_PF_LIMIT+B02.SACU01.OLD_PF_LIMIT+B02.SACU02.OLD_PF_LIMIT+B02.SACU03.OLD_PF_LIMIT+B03.SACU01.OLD_PF_LIMIT+B03.SACU02.OLD_PF_LIMIT+B03.SACU03.OLD_PF_LIMIT,AVG,B01,B01_VR_INV,VR_INV,VR_INV,INV,OLD_PF_LIMIT,OLD_PF_LIMIT,Server9084,9084,1,iplon_test,0,,MW,1",
         "output": "str",
         "x": 400,
         "y": 560,
@@ -6855,7 +6855,7 @@
         "type": "mqtt out",
         "z": "456d66e8cb220ab1",
         "name": "",
-        "topic": "INC_INV",
+        "topic": "HPPC_SOLAR_READ",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -6864,8 +6864,8 @@
         "correl": "",
         "expiry": "",
         "broker": "f80b0b680ce44845",
-        "x": 1175,
-        "y": 480,
+        "x": 1135,
+        "y": 460,
         "wires": [],
         "l": false
     },
@@ -6884,7 +6884,7 @@
         "type": "mqtt in",
         "z": "456d66e8cb220ab1",
         "name": "",
-        "topic": "INC_INV_Write",
+        "topic": "HPPC_SOLAR_WRITE",
         "qos": "0",
         "datatype": "auto-detect",
         "broker": "f80b0b680ce44845",
@@ -6892,7 +6892,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 320,
+        "x": 340,
         "y": 800,
         "wires": [
             [
@@ -7040,7 +7040,8 @@
         "y": 640,
         "wires": [
             [
-                "3d766266151f78cc"
+                "3d766266151f78cc",
+                "bdb37ad36916c28f"
             ]
         ]
     },
@@ -7117,7 +7118,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1030,
-        "y": 360,
+        "y": 380,
         "wires": []
     },
     {
@@ -7134,6 +7135,700 @@
         "statusType": "auto",
         "x": 630,
         "y": 280,
+        "wires": []
+    },
+    {
+        "id": "bdb37ad36916c28f",
+        "type": "debug",
+        "z": "456d66e8cb220ab1",
+        "name": "debug 2685",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "74f1fde54e39b897",
+        "type": "template",
+        "z": "d918a03feb7c460b",
+        "name": "PAC SDF",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n1,B04.SACU01.PAC+B04.SACU02.PAC+B05.SACU01.PAC+B05.SACU02.PAC,SUM,B02,B02_VR_INV,VR_INV,VR_INV,INV,PAC,PAC,Server9084,9084,1,iplon_test,0,,MW,1",
+        "output": "str",
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "d217e9c1603ef698",
+                "800b516e00822943"
+            ]
+        ]
+    },
+    {
+        "id": "5cf5a983dd28ef27",
+        "type": "template",
+        "z": "d918a03feb7c460b",
+        "name": "QAC SDF ",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n2,B04.SACU01.QAC+B04.SACU02.QAC+B05.SACU01.QAC+B05.SACU02.QAC,SUM,B02,B02_VR_INV,VR_INV,VR_INV,INV,QAC,QAC,Server9084,9084,1,iplon_test,0,,MVAr,1",
+        "output": "str",
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "7db136edce3ba33c"
+            ]
+        ]
+    },
+    {
+        "id": "1099a0aee66c481a",
+        "type": "template",
+        "z": "d918a03feb7c460b",
+        "name": "PF SDF ",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n3,B04.SACU01.PF+B04.SACU02.PF+B05.SACU01.PF+B05.SACU02.PF,AVG,B02,B02_VR_INV,VR_INV,VR_INV,INV,PF,PF,Server9084,9084,1,iplon_test,0,,MW,1",
+        "output": "str",
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "a2489742c7c7f23d"
+            ]
+        ]
+    },
+    {
+        "id": "ea67fda275808af3",
+        "type": "template",
+        "z": "d918a03feb7c460b",
+        "name": "OLD PAC SDF ",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n4,B04.SACU01.OLD_PAC_LIMIT+B04.SACU02.OLD_PAC_LIMIT+B05.SACU01.OLD_PAC_LIMIT+B05.SACU02.OLD_PAC_LIMIT,SUM,B02,B02_VR_INV,VR_INV,VR_INV,INV,OLD_PAC_LIMIT,OLD_PAC_LIMIT,Server9084,9084,1,iplon_test,0,,MW,1",
+        "output": "str",
+        "x": 340,
+        "y": 360,
+        "wires": [
+            [
+                "115d0ca1d6c763f6"
+            ]
+        ]
+    },
+    {
+        "id": "b64ac74c9ca17d8e",
+        "type": "template",
+        "z": "d918a03feb7c460b",
+        "name": "OLD QAC SDF ",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n5,B04.SACU01.OLD_QAC_LIMIT+B04.SACU02.OLD_QAC_LIMIT+B05.SACU01.OLD_QAC_LIMIT+B05.SACU02.OLD_QAC_LIMIT,AVG,B02,B02_VR_INV,VR_INV,VR_INV,INV,OLD_QAC_LIMIT,OLD_QAC_LIMIT,Server9084,9084,1,iplon_test,0,,MW,1",
+        "output": "str",
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "f0f1e1fad8c60953"
+            ]
+        ]
+    },
+    {
+        "id": "f07dabaa0d7bfc6a",
+        "type": "template",
+        "z": "d918a03feb7c460b",
+        "name": "OLD_PF_LIMIT SDF ",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n6,B04.SACU01.OLD_PF_LIMIT+B04.SACU02.OLD_PF_LIMIT+B05.SACU01.OLD_PF_LIMIT+B05.SACU02.OLD_PF_LIMIT,AVG,B02,B02_VR_INV,VR_INV,VR_INV,INV,OLD_PF_LIMIT,OLD_PF_LIMIT,Server9084,9084,1,iplon_test,0,,MW,1",
+        "output": "str",
+        "x": 360,
+        "y": 440,
+        "wires": [
+            [
+                "c48e1d15540a15c5"
+            ]
+        ]
+    },
+    {
+        "id": "d217e9c1603ef698",
+        "type": "csv",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 590,
+        "y": 240,
+        "wires": [
+            [
+                "b7dc45ffd2a50cd1"
+            ]
+        ]
+    },
+    {
+        "id": "7db136edce3ba33c",
+        "type": "csv",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 590,
+        "y": 280,
+        "wires": [
+            [
+                "b7791c310bc6df9d"
+            ]
+        ]
+    },
+    {
+        "id": "a2489742c7c7f23d",
+        "type": "csv",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 590,
+        "y": 320,
+        "wires": [
+            [
+                "1b508832bd964488"
+            ]
+        ]
+    },
+    {
+        "id": "115d0ca1d6c763f6",
+        "type": "csv",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 590,
+        "y": 360,
+        "wires": [
+            [
+                "e47b407b5b6f0c61"
+            ]
+        ]
+    },
+    {
+        "id": "f0f1e1fad8c60953",
+        "type": "csv",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 590,
+        "y": 400,
+        "wires": [
+            [
+                "16117e3d2825d972"
+            ]
+        ]
+    },
+    {
+        "id": "c48e1d15540a15c5",
+        "type": "csv",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 590,
+        "y": 440,
+        "wires": [
+            [
+                "535b1ec29fca182c"
+            ]
+        ]
+    },
+    {
+        "id": "b7dc45ffd2a50cd1",
+        "type": "function",
+        "z": "d918a03feb7c460b",
+        "name": "To_MQTT",
+        "func": "var obj = {};\nvar obj1 = {};\nlet array = []\n\nvar time = new Date().getTime()\nfor (var i = 0; i < msg.payload.length; i++)\n{\n    var arr = msg.payload[i].calculated_field.split(\"+\")\n    var val = 0\n    if (msg.payload[i].type == \"SUM\")\n    {\n        for (var j = 0; j < arr.length; j++)\n        {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined)\n            {\n                val = val + tmp_val\n                \n            }\n            else\n            {\n                val = val + 0;;\n            }\n        }\n    }\n    else if (msg.payload[i].type == \"AVG\")\n    {\n        var arr_length = 0\n        for (var j = 0; j < arr.length; j++)\n        {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined)\n            {\n                val = val + tmp_val\n                arr_length++;\n            }\n            else\n            {\n                val = val + 0;\n            }\n        }\n        val = val / arr_length;  \n   \n    }\n\n   \n        val = (val * msg.payload[i].mf).toFixed(2);\n        val = parseFloat(val)\n        var tag_name = msg.payload[i].b + '.' + msg.payload[i].d + '.' + msg.payload[i].f\n        global.set(tag_name, val)\n\n         var length = flow.get(\"length\")\n\n         var value = global.get(tag_name)\n\n            obj.payload = {\n                value: value,\n                b: msg.payload[i].b,\n                bd: msg.payload[i].bd,\n                d: msg.payload[i].d,\n                dd: msg.payload[i].dd,\n                dt: msg.payload[i].dt,\n                f: msg.payload[i].f,\n                fd: msg.payload[i].fd,\n                h: msg.payload[i].h,\n                iid: msg.payload[i].iid,\n                m: msg.payload[i].m,\n                p: msg.payload[i].p,\n                qu: msg.payload[i].qu,\n                text: msg.payload[i].text,\n                u: msg.payload[i].u,\n                mf: msg.payload[i].mf,\n                reg_id: msg.payload[i].vr_wr_reg,\n                data_type: msg.payload[i].data_type,\n                qty: msg.payload[i].qty,\n                fc: msg.payload[i].fc,\n                SNo: msg.payload[i].SNo,\n                time: time,        \n            }\n            node.send(obj)\n    }\n\n\n//msg.payload = { length: length }\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 240,
+        "wires": [
+            [
+                "1c6eea5f58c3b73d",
+                "a2ad037954cf3406"
+            ]
+        ]
+    },
+    {
+        "id": "b7791c310bc6df9d",
+        "type": "function",
+        "z": "d918a03feb7c460b",
+        "name": "To_MQTT",
+        "func": "var obj = {};\nvar obj1 = {};\nlet array = []\n\nvar time = new Date().getTime()\nfor (var i = 0; i < msg.payload.length; i++) {\n    var arr = msg.payload[i].calculated_field.split(\"+\")\n    var val = 0\n    if (msg.payload[i].type == \"SUM\") {\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n            }\n            else {\n                val = val + 0;\n            }\n        }\n    }\n    else if (msg.payload[i].type == \"AVG\") {\n        var arr_length = 0\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n                arr_length++;\n            }\n            else {\n                val = val + 0;\n            }\n        }\n        val = val / arr_length;        \n    }\n\n\n    val = (val * msg.payload[i].mf).toFixed(2);\n    val = parseFloat(val)\n    var tag_name = msg.payload[i].b + '.' + msg.payload[i].d + '.' + msg.payload[i].f\n    global.set(tag_name, val)\n    var length = flow.get(\"length\")\n\n     var value = global.get(tag_name)\n   \n        obj.payload = {\n            value: value,\n            b: msg.payload[i].b,\n            bd: msg.payload[i].bd,\n            d: msg.payload[i].d,\n            dd: msg.payload[i].dd,\n            dt: msg.payload[i].dt,\n            f: msg.payload[i].f,\n            fd: msg.payload[i].fd,\n            h: msg.payload[i].h,\n            iid: msg.payload[i].iid,\n            m: msg.payload[i].m,\n            p: msg.payload[i].p,\n            qu: msg.payload[i].qu,\n            text: msg.payload[i].text,\n            u: msg.payload[i].u,\n            mf: msg.payload[i].mf,\n            reg_id: msg.payload[i].vr_wr_reg,\n            data_type: msg.payload[i].data_type,\n            qty: msg.payload[i].qty,\n            fc: msg.payload[i].fc,\n            SNo: msg.payload[i].SNo,\n            time: time,        \n        }\n        node.send(obj)\n    }\n\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 280,
+        "wires": [
+            [
+                "1c6eea5f58c3b73d",
+                "f8c07d89724925a1"
+            ]
+        ]
+    },
+    {
+        "id": "1b508832bd964488",
+        "type": "function",
+        "z": "d918a03feb7c460b",
+        "name": "To_MQTT",
+        "func": "var obj = {};\nvar obj1 = {};\nlet array = []\n\nvar time = new Date().getTime()\nfor (var i = 0; i < msg.payload.length; i++) {\n    var arr = msg.payload[i].calculated_field.split(\"+\")\n    var val = 0\n    if (msg.payload[i].type == \"SUM\") {\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n            }\n            else {\n                val = val + 0;\n            }\n        }\n    }\n    else if (msg.payload[i].type == \"AVG\") {\n        var arr_length = 0\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n                arr_length++;\n            }\n            else {\n                val = val + 0;\n            }\n        }\n        val = val / arr_length;\n        var length = arr_length;\n        flow.set(\"length\", length)\n    }\n\n    val = (val * msg.payload[i].mf).toFixed(2);\n    val = parseFloat(val)\n    var tag_name = msg.payload[i].b + '.' + msg.payload[i].d + '.' + msg.payload[i].f\n    global.set(tag_name, val)\n\n     var value = global.get(tag_name)\n\n        obj.payload = {\n            value: value,\n            b: msg.payload[i].b,\n            bd: msg.payload[i].bd,\n            d: msg.payload[i].d,\n            dd: msg.payload[i].dd,\n            dt: msg.payload[i].dt,\n            f: msg.payload[i].f,\n            fd: msg.payload[i].fd,\n            h: msg.payload[i].h,\n            iid: msg.payload[i].iid,\n            m: msg.payload[i].m,\n            p: msg.payload[i].p,\n            qu: msg.payload[i].qu,\n            text: msg.payload[i].text,\n            u: msg.payload[i].u,\n            mf: msg.payload[i].mf,\n            reg_id: msg.payload[i].vr_wr_reg,\n            data_type: msg.payload[i].data_type,\n            qty: msg.payload[i].qty,\n            fc: msg.payload[i].fc,\n            SNo: msg.payload[i].SNo,\n            time: time,        \n        }\n        node.send(obj)\n    }\n//msg.payload = { length: length }\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 320,
+        "wires": [
+            [
+                "1c6eea5f58c3b73d"
+            ]
+        ]
+    },
+    {
+        "id": "e47b407b5b6f0c61",
+        "type": "function",
+        "z": "d918a03feb7c460b",
+        "name": "To_MQTT",
+        "func": "var obj = {};\nvar obj1 = {};\nlet array = []\n\nvar time = new Date().getTime()\nfor (var i = 0; i < msg.payload.length; i++) {\n    var arr = msg.payload[i].calculated_field.split(\"+\")\n    var val = 0\n    if (msg.payload[i].type == \"SUM\") {\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n            }\n            else {\n                val = val + 0;\n            }\n        }\n    }\n    else if (msg.payload[i].type == \"AVG\") {\n        var arr_length = 0\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n                arr_length++;\n            }\n            else {\n                val = val + 0;\n            }\n        }\n        val = val / arr_length;\n        var length = arr_length;\n        flow.set(\"length\", length)\n    }\n\n\n    val = (val * msg.payload[i].mf).toFixed(2);\n    val = parseFloat(val)\n    var tag_name = msg.payload[i].b + '.' + msg.payload[i].d + '.' + msg.payload[i].f\n    global.set(tag_name, val)\n\n     var value = global.get(tag_name)\n\n    \n        obj.payload = {\n            value: value,\n            b: msg.payload[i].b,\n            bd: msg.payload[i].bd,\n            d: msg.payload[i].d,\n            dd: msg.payload[i].dd,\n            dt: msg.payload[i].dt,\n            f: msg.payload[i].f,\n            fd: msg.payload[i].fd,\n            h: msg.payload[i].h,\n            iid: msg.payload[i].iid,\n            m: msg.payload[i].m,\n            p: msg.payload[i].p,\n            qu: msg.payload[i].qu,\n            text: msg.payload[i].text,\n            u: msg.payload[i].u,\n            mf: msg.payload[i].mf,\n            reg_id: msg.payload[i].vr_wr_reg,\n            data_type: msg.payload[i].data_type,\n            qty: msg.payload[i].qty,\n            fc: msg.payload[i].fc,\n            SNo: msg.payload[i].SNo,\n            time: time,\n        }\n        node.send(obj)\n    }\n\n//msg.payload = { length: length }\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 360,
+        "wires": [
+            [
+                "1c6eea5f58c3b73d"
+            ]
+        ]
+    },
+    {
+        "id": "16117e3d2825d972",
+        "type": "function",
+        "z": "d918a03feb7c460b",
+        "name": "To_MQTT",
+        "func": "var obj = {};\nvar obj1 = {};\nlet array = []\n\nvar time = new Date().getTime()\nfor (var i = 0; i < msg.payload.length; i++) {\n    var arr = msg.payload[i].calculated_field.split(\"+\")\n    var val = 0\n    if (msg.payload[i].type == \"SUM\") {\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n            }\n            else {\n                val = val + 0;\n            }\n        }\n    }\n    else if (msg.payload[i].type == \"AVG\") {\n        var arr_length = 0\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n                arr_length++;\n            }\n            else {\n                val = val + 0;\n            }\n        }\n        val = val / arr_length;\n        var length = arr_length;\n        flow.set(\"length\", length)\n    }\n\n    val = (val * msg.payload[i].mf).toFixed(2);\n    val = parseFloat(val)\n    var tag_name = msg.payload[i].b + '.' + msg.payload[i].d + '.' + msg.payload[i].f\n    global.set(tag_name, val)\n\n    var value = global.get(tag_name)\n\n        obj.payload = {\n            value: value,\n            b: msg.payload[i].b,\n            bd: msg.payload[i].bd,\n            d: msg.payload[i].d,\n            dd: msg.payload[i].dd,\n            dt: msg.payload[i].dt,\n            f: msg.payload[i].f,\n            fd: msg.payload[i].fd,\n            h: msg.payload[i].h,\n            iid: msg.payload[i].iid,\n            m: msg.payload[i].m,\n            p: msg.payload[i].p,\n            qu: msg.payload[i].qu,\n            text: msg.payload[i].text,\n            u: msg.payload[i].u,\n            mf: msg.payload[i].mf,\n            reg_id: msg.payload[i].vr_wr_reg,\n            data_type: msg.payload[i].data_type,\n            qty: msg.payload[i].qty,\n            fc: msg.payload[i].fc,\n            SNo: msg.payload[i].SNo,\n            time: time,        \n        }\n        node.send(obj)\n    }\n\n//msg.payload = { length: length }\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 400,
+        "wires": [
+            [
+                "1c6eea5f58c3b73d"
+            ]
+        ]
+    },
+    {
+        "id": "535b1ec29fca182c",
+        "type": "function",
+        "z": "d918a03feb7c460b",
+        "name": "To_MQTT",
+        "func": "var obj = {};\nvar obj1 = {};\nlet array = []\n\nvar time = new Date().getTime()\nfor (var i = 0; i < msg.payload.length; i++) {\n    var arr = msg.payload[i].calculated_field.split(\"+\")\n    var val = 0\n    if (msg.payload[i].type == \"SUM\") {\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n            }\n            else {\n                val = val + 0;\n            }\n        }\n    }\n    else if (msg.payload[i].type == \"AVG\") {\n        var arr_length = 0\n        for (var j = 0; j < arr.length; j++) {\n            var tmp_val = global.get(arr[j])\n            if (tmp_val != \"NaN\" && tmp_val != \"nan\" && tmp_val != undefined) {\n                val = val + tmp_val\n                arr_length++;\n            }\n            else {\n                val = val + 0;\n            }\n        }\n        val = val / arr_length;\n        var length = arr_length;\n        flow.set(\"length\", length)\n    }\n\n    val = (val * msg.payload[i].mf).toFixed(2);\n    val = parseFloat(val)\n    var tag_name = msg.payload[i].b + '.' + msg.payload[i].d + '.' + msg.payload[i].f\n    global.set(tag_name, val)\n\n     var value = global.get(tag_name)\n\n        obj.payload = {\n            value: value,\n            b: msg.payload[i].b,\n            bd: msg.payload[i].bd,\n            d: msg.payload[i].d,\n            dd: msg.payload[i].dd,\n            dt: msg.payload[i].dt,\n            f: msg.payload[i].f,\n            fd: msg.payload[i].fd,\n            h: msg.payload[i].h,\n            iid: msg.payload[i].iid,\n            m: msg.payload[i].m,\n            p: msg.payload[i].p,\n            qu: msg.payload[i].qu,\n            text: msg.payload[i].text,\n            u: msg.payload[i].u,\n            mf: msg.payload[i].mf,\n            reg_id: msg.payload[i].vr_wr_reg,\n            data_type: msg.payload[i].data_type,\n            qty: msg.payload[i].qty,\n            fc: msg.payload[i].fc,\n            SNo: msg.payload[i].SNo,\n            time: time,        \n        }\n        node.send(obj)\n    }\n\n//msg.payload = { length: length }\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 440,
+        "wires": [
+            [
+                "1c6eea5f58c3b73d"
+            ]
+        ]
+    },
+    {
+        "id": "c2c125c7221d8d97",
+        "type": "mqtt out",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "topic": "HPPC_WIND_READ",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f80b0b680ce44845",
+        "x": 1135,
+        "y": 360,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "f07423982ea0fbcf",
+        "type": "comment",
+        "z": "d918a03feb7c460b",
+        "name": "Incomer Node-RED to PPC",
+        "info": "",
+        "x": 190,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "87c0a3e18fec146f",
+        "type": "mqtt in",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "topic": "HPPC_WIND_WRITE",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "f80b0b680ce44845",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 680,
+        "wires": [
+            [
+                "e035926b33d30820",
+                "81815eccf39d1b52"
+            ]
+        ]
+    },
+    {
+        "id": "e035926b33d30820",
+        "type": "debug",
+        "z": "d918a03feb7c460b",
+        "name": "debug 2680",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "81815eccf39d1b52",
+        "type": "function",
+        "z": "d918a03feb7c460b",
+        "name": "function 543",
+        "func": "var obj = {}\nvar field = msg.payload.f\n\nvar no_of_inv = flow.get(\"length\")\n\nif (field.includes(\"PAC_LIMIT\")){\n    var tag_field = msg.payload.f\n    var actual_pac_limit = msg.payload.value    \n    global.set(tag_field, actual_pac_limit)\n        \n}\nelse if (field.includes(\"QAC_LIMIT\")) {\n    var tag_field = msg.payload.f\n    var actual_qac_limit = msg.payload.value   \n    global.set(tag_field, actual_qac_limit)\n    \n}\nelse if (field.includes(\"PF_LIMIT\")) {\n    var tag_field = msg.payload.f\n    var actual_pf_limit = msg.payload.value   \n    global.set(tag_field, actual_pf_limit)\n\n   \n}\nelse if (field.includes(\"QAC_REF_SEL\")) {\n    var tag_field = msg.payload.f\n    var actual_qac_ref_sel = msg.payload.value   \n    global.set(tag_field, actual_qac_ref_sel)\n\n   \n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 680,
+        "wires": [
+            [
+                "eac7a31925675fb2"
+            ]
+        ]
+    },
+    {
+        "id": "1c6eea5f58c3b73d",
+        "type": "join",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "7",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 950,
+        "y": 340,
+        "wires": [
+            [
+                "c2c125c7221d8d97"
+            ]
+        ]
+    },
+    {
+        "id": "eac7a31925675fb2",
+        "type": "debug",
+        "z": "d918a03feb7c460b",
+        "name": "debug 2681",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "79dd8752ac528603",
+        "type": "template",
+        "z": "d918a03feb7c460b",
+        "name": "NO_OF_INVERTERS_ONLINE SDF",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SNo,calculated_field,type,b,bd,d,dd,dt,f,fd,h,iid,m,p,qu,text,u,mf\n7,NO_OF_INV,SUM,B02,B02_VR_INV,VR_INV,VR_INV,INV,NO_OF_INV,NO_OF_INV,Server9084,9084,1,iplon_test,0,,MW,1",
+        "output": "str",
+        "x": 390,
+        "y": 520,
+        "wires": [
+            [
+                "ad31df621e1fd56f"
+            ]
+        ]
+    },
+    {
+        "id": "ad31df621e1fd56f",
+        "type": "csv",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": "",
+        "x": 610,
+        "y": 520,
+        "wires": [
+            [
+                "3dfa971399454c5a"
+            ]
+        ]
+    },
+    {
+        "id": "82b6b2fcc24c801a",
+        "type": "function",
+        "z": "d918a03feb7c460b",
+        "name": "To_MQTT",
+        "func": "    var length = flow.get(\"length\")\n    global.set(\"No_of_Inv\", length)\n    if(length != 0)\n    {\n        var time = new Date().getTime()\n        var obj = {};\n        obj.payload = {\n            value:length,\n            b: msg.payload.b,\n            bd: msg.payload.bd,\n            d: msg.payload.d,\n            dd: msg.payload.dd,\n            dt: msg.payload.dt,\n            f: msg.payload.f,\n            fd: msg.payload.fd,\n            h: msg.payload.h,\n            iid: msg.payload.iid,\n            m: msg.payload.m,\n            p: msg.payload.p,\n            qu: msg.payload.qu,     \n            u: msg.payload.u,\n            mf: msg.payload.mf,        \n            SNo: msg.payload.SNo, \n            time:time     \n     \n    }\n    node.send(obj)\n    }\n    return null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 520,
+        "wires": [
+            [
+                "1c6eea5f58c3b73d",
+                "89b03966aa131bfc"
+            ]
+        ]
+    },
+    {
+        "id": "3dfa971399454c5a",
+        "type": "split",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 730,
+        "y": 520,
+        "wires": [
+            [
+                "82b6b2fcc24c801a"
+            ]
+        ]
+    },
+    {
+        "id": "bff6b31828167440",
+        "type": "inject",
+        "z": "d918a03feb7c460b",
+        "name": "",
+        "props": [],
+        "repeat": "0.2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 360,
+        "wires": [
+            [
+                "74f1fde54e39b897",
+                "5cf5a983dd28ef27",
+                "1099a0aee66c481a",
+                "ea67fda275808af3",
+                "b64ac74c9ca17d8e",
+                "f07dabaa0d7bfc6a",
+                "79dd8752ac528603"
+            ]
+        ]
+    },
+    {
+        "id": "f8c07d89724925a1",
+        "type": "debug",
+        "z": "d918a03feb7c460b",
+        "name": "debug 2682",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a2ad037954cf3406",
+        "type": "debug",
+        "z": "d918a03feb7c460b",
+        "name": "debug 2683",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "800b516e00822943",
+        "type": "debug",
+        "z": "d918a03feb7c460b",
+        "name": "debug 2684",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "89b03966aa131bfc",
+        "type": "debug",
+        "z": "d918a03feb7c460b",
+        "name": "debug 2686",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 620,
         "wires": []
     },
     {
